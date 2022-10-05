@@ -1,0 +1,3 @@
+C:/Users/taing/Desktop/School/3034-C++/is_prime_prog/out/build/x64-Debug/CMakeFiles/main.dir
+C:/Users/taing/Desktop/School/3034-C++/is_prime_prog/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/taing/Desktop/School/3034-C++/is_prime_prog/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

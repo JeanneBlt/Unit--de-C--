@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mtaing/C++/cartesian_vector_param/config.h
+
+/home/mtaing/C++/cartesian_vector_param/main.cc
+iostream
+-
+config.h
+/home/mtaing/C++/cartesian_vector_param/config.h
+vector.hh
+/home/mtaing/C++/cartesian_vector_param/vector.hh
+vector
+-
+cstring
+-
+
+/home/mtaing/C++/cartesian_vector_param/vector.cpp
+vector.hh
+/home/mtaing/C++/cartesian_vector_param/vector.hh
+
+/home/mtaing/C++/cartesian_vector_param/vector.hh
+ostream
+-
+initializer_list
+-
+cassert
+-
+config.h
+/home/mtaing/C++/cartesian_vector_param/config.h
+vector.cpp
+/home/mtaing/C++/cartesian_vector_param/vector.cpp
+
