@@ -1,4 +1,4 @@
-// Exercice réalisé par Michel Taing avec Jeanne Boulet 
+// Exercice rï¿½alisï¿½ par Michel Taing avec Jeanne Boulet 
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -33,8 +33,8 @@ int main(int argc, char* argv[])
 {
     int count = 0;
     string m = argv[2]; // m est le motif
-    ifstream myfile; // déclaration du fichier
-    string line; // déclaration de ligne
+    ifstream myfile; // dï¿½claration du fichier
+    string line; // dï¿½claration de ligne
     myfile.open(argv[1]); // ouverture du fichier
     if (myfile.is_open())
     {
@@ -53,7 +53,6 @@ int main(int argc, char* argv[])
     }
     else
     {
-        cout << stat(x.c_str(), &buffer) << endl;
         cout << "The file " << argv[1] << " could not be opened.";
         return 1;
     }
