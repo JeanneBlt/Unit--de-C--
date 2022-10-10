@@ -1,26 +1,9 @@
 // Exercice réalisé par Michel Taing avec Jeanne Boulet 
 #include <iostream>
 #include <string>
-#include <cmath>
 #include <sstream>
-#include <vector>
 #include <fstream>
-#include <sys/stat.h>
 using namespace std;
-
-
-vector<string> splitstring(string s)
-{
-    int start, end = -1; // On initialise le end à -1 pour ignorer la taille de string s
-    vector<string> txt;
-    do
-    {
-        start = end + 1; // On replace start après le dernier end et avec le +1 on s'assure de la fin du programme
-        end = s.find(" ", start); // On assigne à end la valeur de la position du premier " " à partir de la position start
-        txt.push_back(s.substr(start, end - start));
-    } while (end != -1);  // Le programme s'arrête lorsque end atteint -1
-    return txt;
-}
 
 bool motiveinString(string s, string motive)
 {
@@ -46,39 +29,32 @@ bool motiveinString(string s, string motive)
     return false;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     int count = 0;
-    cout << "Please type the path to the file and the motive :" << endl;
-    string m;
-    string x;
-    cin >> x >> m; // Cette ligne est nécessaire pour pouvoir recevoir correctement l'entrée
-    cout << x << endl;
-    struct stat buffer;
-    if (stat(x.c_str(), &buffer) == 0)
+    string m = argv[2]; // m est le motif
+    ifstream myfile; // déclaration du fichier
+    string line; // déclaration de ligne
+    myfile.open(argv[1]); // ouverture du fichier
+    if (myfile.is_open())
     {
-        fstream myfile;
-        myfile.open(x);
-        getline(myfile, x);
-        vector<string> WordsList = splitstring(x);
-        for (int i = 0; i < WordsList.size(); i++)
+        while (myfile >> line)
         {
-            string s = WordsList[i];
-            cout << s << endl;
-            if (motiveinString(s,m))
+            //cout << line << endl;
+            if (motiveinString(line,m))
             {
                 count++;
             }
-            cout << count << endl;
+            //cout << count << endl;
         }
         myfile.close();
-        cout << "the file " << count << " contains " << count << " words containing the motive " << m << endl;
+        cout << "The file " << argv[1] << " contains " << count << " words containing the motive " << m << endl;
         return 0;
     }
     else
     {
         cout << stat(x.c_str(), &buffer) << endl;
-        cout << "The file " << x << " could not be opened.";
+        cout << "The file " << argv[1] << " could not be opened.";
         return 1;
     }
 }
