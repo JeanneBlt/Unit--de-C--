@@ -11,7 +11,7 @@ bool motiveinString(string s, string motive)
     {
         return false;
     }
-    for (int i = 0; i < s.size() - motive.size(); i++)
+    for (int i = 0; i <= s.size() - motive.size(); i++)
     {
         bool test = true;
         for (int j = 0; j < motive.size(); j++)
@@ -49,12 +49,12 @@ int main(int argc, char* argv[])
             //cout << count << endl;
         }
         myfile.close();
-        cout << "The file " << argv[1] << " contains " << count << " words containing the motive " << m << endl;
-        return 0;
+        cout << "The file " << file << " contains " << count << " words containing the motive " << m << endl ;
+        return 1;
     }
     else
     {
-        cout << "The file " << argv[1] << " could not be opened.";
-        return 1;
+        cout << "The file " << file << " could not be opened.";
+        return 0;
     }
 }
